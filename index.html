@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="author" content="Rajesh Wadhwani">
+	<title>Slots by Rajesh Wadhwani</title>
+	<link rel="stylesheet" type="text/css" href="includes/styles.css" />
+	<script type="text/javascript" src="includes/functions.js"></script> 
+</head>
+<body onload="setFooter(); loadGameType(document.frmBoard.gtype.value);">
+<h1>Slots :: Game</h1>
+
+<!-- BEGIN_CONTENT -->
+<div class="content">
+	<form method="get" action="" name="frmBoard" onsubmit="return false;">
+	<div class="board">
+		<!-- BEGIN_GAME_BOARD -->
+		<div class="game-board">
+			<div id="slots-holder">
+				<div class="clear" style="height: 0px;"><!--space--></div>
+				<div class="slot"><div id="slot1">7</div></div>
+				<div class="slot"><div id="slot2">7</div></div>
+				<div class="slot"><div id="slot3">7</div></div>
+				<div class="clear" style="height: 0px;"><!--space--></div>
+			</div>
+			<div id="slots-light">
+				<div class="clear" style="height: 0px;"><!--space--></div>
+				<div id="light-slot1"><!--slot1--></div>
+				<div id="light-slot2"><!--slot2--></div>
+				<div id="light-slot3"><!--slot3--></div>
+				<div class="clear" style="height: 0px;"><!--space--></div>
+			</div>
+			
+			<div class="clear"><input type="button" class="button" id="spin" value="  SPIN  " onclick="spinWheel();" /></div>
+		</div>
+		<!-- END_GAME_BOARD -->
+		
+		<!-- BEGIN_CONTROLLERS -->
+		<div class="controllers">
+			<div id="score-board">
+				<div class="scores-heading">
+					<div class="divider"><!--space--></div>
+					<div class="leftdiv bold">Status</div>
+					<div class="rightdiv bold">Scores</div>
+					<div class="divider"><!--space--></div>
+				</div>
+				
+				<div class="divider"><!--space--></div>
+				<div class="divider"><!--space--></div>
+				<div class="leftdiv">Total times played:</div>
+				<div class="rightdiv" id="total_times_played">0</div>
+				
+				<div class="divider"><!--space--></div>
+				<div class="leftdiv">Total times played with numbers:</div>
+				<div class="rightdiv" id="total_played_numbers">0</div>
+				
+				<div class="divider"><!--space--></div>
+				<div class="leftdiv">Total times played with images:</div>
+				<div class="rightdiv" id="total_played_images">0</div>
+				
+				<div class="divider"><!--space--></div>
+				<div class="leftdiv">Lost:</div>
+				<div class="rightdiv red" id="lost">0</div>
+				
+				<div class="divider"><!--space--></div>
+				<div class="leftdiv">Won:</div>
+				<div class="rightdiv green" id="won">0</div>
+				
+				<div class="divider"><!--space--></div>
+				<div class="divider"><!--space--></div>
+				<div class="divider"><!--space--></div>
+				<div class="float-right" style="margin-right: 20px;">
+					<input type="button" class="button" value="Reset scores" onclick="window.location.reload();" style="width: 140px;" />
+				</div>
+				
+				<div class="divider"><!--space--></div>
+				<div class="divider"><!--space--></div>
+				<div class="divider"><!--space--></div>
+				<div class="divider"><!--space--></div>
+			</div>
+			
+			<div class="divider" style="border-top: 1px dashed #A0A0A0;"><!--space--></div>
+			<div class="divider"><!--space--></div>
+			<div class="divider"><!--space--></div>
+			
+			<div class="leftdiv">Player name:</div>
+			<div class="rightdiv"><input type="text" name="pname" value="" style="width: 210px;" /></div>
+			
+			<div class="divider"><!--space--></div>
+			<div class="leftdiv">Game type:</div>
+			<div class="rightdiv">
+				<div class="float-left" style="width: 50%;">
+					<input type="radio" name="gtype" value="images" style="border: 0px; margin-left: 0px;" onchange="updateStartWithValues();" />Images
+					<div class="clear" style="height: 1px;"><!--space--></div>
+					<input type="radio" name="gtype" checked="checked" value="numbers" style="border: 0px; margin-left: 0px;" onchange="loadGameType(this.value);" />Numbers
+					<div style="margin-top: 3px; margin-left: 13px;">
+						<input type="checkbox" name="start_with" value="" style="border: 0px;" onchange="updateStartWithValues();" /> Start new game with:
+						<select name="start_with_value" onchange="updateStartWithValues();" style="width: 35px;">
+							<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7" selected="selected">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="float-left">
+				<span class="underline">Start with</span>
+			</div>				
+		</div>
+		<!-- END_CONTROLLERS -->
+	</div>
+	</form>
+</div>
+<!-- END_CONTENT -->
+
+<div id="footer">
+	Created by Rajesh Wadhwani on 13th March, 2010 | Last updated: 22nd March, 2010
+	&nbsp;
+</div>
+</body>
+</html>
